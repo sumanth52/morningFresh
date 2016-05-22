@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
   $scope.game2=function(){$state.go('game2'); }
   $scope.game3=function(){$state.go('game3'); }
   $scope.game4=function(){$state.go('game3'); }
- 
+
 })
 
 
@@ -31,14 +31,11 @@ angular.module('starter.controllers', [])
 	  $scope.questions();
 })
 
-  .controller('loaderCtrl',function($scope,$ionicLoading,$timeout,$window){
-    $scope.load=function(){
-      $timeout(function(){
-        $ionicLoading.show();
-      },3000)
-      $ionicLoading.hide();
+  .controller('loaderCtrl',function($scope,$window){
+      screenOrientation.Orientations('landscape');
+    console.log(screen.orientation)
       $window.open('http://drunkendinesh.com/');
-    }
+
   })
 
 
