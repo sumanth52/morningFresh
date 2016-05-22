@@ -33,24 +33,29 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // setup an abstract state for the tabs directive
 
-  .state('sample', {
-    url: '/sample',
+  .state('home', {
+    url: '/home',
 	templateUrl: 'templates/sample.html',
 	controller: 'AccountCtrl'
   })
   .state('game1', {
     url: '/game1',
 	templateUrl: 'templates/game1.html',
-	controller: 'AccountCtrl'
+	controller: 'DashCtrl'
   })
   .state('game2', {
     url: '/game2',
 	templateUrl: 'templates/game2.html',
-	controller: 'AccountCtrl'
+	controller: 'game2Ctrl'
   })
   .state('game3', {
     url: '/game3',
 	templateUrl: 'templates/game3.html',
+	controller: 'AccountCtrl'
+  })
+  .state('game4', {
+    url: '/game4',
+	templateUrl: 'templates/game4.html',
 	controller: 'AccountCtrl'
   })
   .state('buyProduct', {
@@ -61,6 +66,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 ;
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/sample');
+  $urlRouterProvider.otherwise('/home');
 
 });

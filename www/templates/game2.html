@@ -1,8 +1,14 @@
 <ion-view class="bar-positive">
-  <ion-content class="padding">
-<a href="#/game1" class="button button-calm">
-  Game 2
-</a><br/>
-
+  <ion-content >
+  <div class="padding">
+  <p class="item"><span>Your Score</span> {{Score}}</p><br/>
+  <div class="col" >
+	<p class="">{{game2Question}}</p><br/>
+  </div>
+<button ng-click="game2Question2()" class="button button-calm game_button">refresh</button>
+ </div>
   </ion-content>
+<div class="bar bar-footer bar-clear game_footerButton">
+<button ng-click="game2Question2()" class="button button-full game_nextButton">refresh</button>
+</div>
 </ion-view>

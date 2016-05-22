@@ -1,15 +1,24 @@
 <ion-view class="bar-positive">
-  <ion-content class="padding">
-<a href="#/game1" class="button button-calm">
-  Game 1
-</a><br/>
-<a href="#/game2" class="button button-calm">
-  Game 2
-</a><br/>
-<a href="#/game3" class="button button-calm">
-  Game 3
-</a><br/>  
-</ion-content>
+	<ion-content>
+		<div class="homePage text-center">
+			<div class="col">
+				<img src="img/logo.png"/>
+			</div>
+			<button ng-click="game1()" class="button button-full button-calm game_button">
+			  Game 1
+			</button>
+			<button ng-click="game2()" class="button button-full button-calm game_button">
+			  Game 2
+			</button>
+			<button ng-click="game3()" class="button button-full button-calm game_button">
+			  Game 3
+			</button>
+			<button ng-click="game4()" class="button button-full button-calm game_button">
+			  Game 4
+			</button>
+			
+	`	</div>  
+	</ion-content>
 <div class="bar bar-footer bar-balanced">
   <div class="title" ng-click="buyProducts()">Buy product</div>
 </div>

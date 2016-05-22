@@ -1,7 +1,17 @@
 <ion-view class="bar-positive">
-  <ion-content class="padding">
-<a href="#/game1" class="button button-calm">
-  Game 1
-</a><br/>
+  <ion-content >
+  <div class="padding">
+  <p class="col"><h3>Never Have I Ever</h3></p><br/>
+  <div class="col" >
+
+	<p class="">Question Date{{lists.txnDate}} </p>
+	<ion-radio ng-model="choice" ng-value="'A'">{{lists.amount}}</ion-radio>
+	<ion-radio ng-model="choice" ng-value="'B'">{{ lists.orderId}}</ion-radio>
+  </div>
+  
+ </div>
   </ion-content>
+  <div class="bar bar-footer bar-clear game_footerButton">
+<button ng-click="questions()" class="button button-full game_nextButton">refresh</button>
+</div>
 </ion-view>
