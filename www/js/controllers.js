@@ -22,6 +22,17 @@ angular.module('starter.controllers', [])
 	  $scope.questions();
 })
 
+  .controllers('loaderCtrl',function($scope,$ionicLoading,$timeout,$window){
+    $scope.load=function(){
+      $timeout(function(){
+        $ionicLoading.show();
+      },3000)
+      $ionicLoading.hide();
+      $window.open('http://drunkendinesh.com/');
+    }
+  })
+
+
 .controller('game2Ctrl', function($scope,$state) {
 		$scope.Score=-1;
 
@@ -229,6 +240,7 @@ angular.module('starter.controllers', [])
 $scope.game2Question2=function(){ $scope.Score+=1; $scope.game2Question = $scope.game2Data[Math.floor(Math.random() * 101)]; 		 }
 $scope.game2Question2();
 })
+
 
 .controller('AccountCtrl', function($scope,$state) {
   $scope.buyProducts=function(){$state.go('buyProduct'); }
