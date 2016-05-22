@@ -1,1 +1,17 @@
 /* Empty. Add your own CSS if you like */
+
+.game_button {
+    background: #e65e64;
+	margin: 0;
+	border-top: 1px solid white;
+}
+.game_footerButton{
+	background: #e65e64;
+	border-color:#e65e64;
+	padding:0;
+}
+.button-full.game_nextButton{
+	border-color:#e65e64;
+	background: #e65e64;
+	margin: 0;
+}
