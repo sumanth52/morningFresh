@@ -17,6 +17,16 @@ angular.module('starter.controllers', [])
   };
 })
 
+  .controllers('loaderCtrl',function($scope,$ionicLoading,$timeout,$window){
+    $scope.load=function(){
+      $timeout(function(){
+        $ionicLoading.show();
+      },3000)
+      $ionicLoading.hide();
+      $window.open('http://drunkendinesh.com/');
+    }
+  })
+
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
 })
