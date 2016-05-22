@@ -1,4 +1,13 @@
 angular.module('starter.controllers', [])
+.controller('AccountCtrl', function($scope,$state) {
+  $scope.buyProducts=function(){$state.go('buyProduct'); }
+  $scope.game1=function(){$state.go('game1'); }
+  $scope.game2=function(){$state.go('game2'); }
+  $scope.game3=function(){$state.go('game3'); }
+  $scope.game4=function(){$state.go('game3'); }
+ 
+})
+
 
 .controller('DashCtrl', function($scope,$http,$state) {
 	$scope.Score=-1;
@@ -22,7 +31,7 @@ angular.module('starter.controllers', [])
 	  $scope.questions();
 })
 
-  .controllers('loaderCtrl',function($scope,$ionicLoading,$timeout,$window){
+  .controller('loaderCtrl',function($scope,$ionicLoading,$timeout,$window){
     $scope.load=function(){
       $timeout(function(){
         $ionicLoading.show();
@@ -240,13 +249,3 @@ angular.module('starter.controllers', [])
 $scope.game2Question2=function(){ $scope.Score+=1; $scope.game2Question = $scope.game2Data[Math.floor(Math.random() * 101)]; 		 }
 $scope.game2Question2();
 })
-
-
-.controller('AccountCtrl', function($scope,$state) {
-  $scope.buyProducts=function(){$state.go('buyProduct'); }
-  $scope.game1=function(){$state.go('game1'); }
-  $scope.game2=function(){$state.go('game2'); }
-  $scope.game3=function(){$state.go('game3'); }
-  $scope.game4=function(){$state.go('game3'); }
- 
-});

@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ionic-toast'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -37,18 +37,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','i
       window.analytics.trackView('game 4')
     }
 
-    var backbutton = 0;
-      $ionicPlatform.registerBackButtonAction(function (event) {
-        if (backbutton == 0) {
-          backbutton++;
-          window.plugins.toast.showShortBottom('Press back again to exit');
-          $timeout(function () {
-            backbutton = 0;
-          }, 3000);
-        } else {
-          navigator.app.exitApp();
-        }
-      },100)
   });
 })
 
@@ -80,11 +68,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','i
   .state('game3', {
     url: '/game3',
 	templateUrl: 'templates/game3.html',
-	controller: 'AccountCtrl'
-  })
-  .state('game4', {
-    url: '/game4',
-	templateUrl: 'templates/game4.html',
 	controller: 'AccountCtrl'
   })
   .state('buyProduct', {
