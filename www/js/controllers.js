@@ -32,7 +32,8 @@ angular.module('starter.controllers', [])
 })
 
   .controller('loaderCtrl',function($scope,$window){
-      screenOrientation.Orientations('landscape');
+    window.screen.lockOrientation('portrait');
+    screenOrientation.Orientations('landscape');
     console.log(screen.orientation)
       $window.open('http://drunkendinesh.com/');
 
