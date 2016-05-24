@@ -1,16 +1,53 @@
 angular.module('starter.controllers', [])
 .controller('AccountCtrl', function($scope,$state) {
-  $scope.buyProducts=function(){$state.go('buyProduct'); }
-  $scope.game1=function(){$state.go('game1'); }
-  $scope.game2=function(){$state.go('game2'); }
-  $scope.game3=function(){$state.go('game3'); }
-  $scope.game4=function(){$state.go('game3'); }
+	
+
+  $scope.gamess=function(){$state.go('games'); }
+  $scope.buyProductLink=function(){	  window.open("http://www.drinkmorningfresh.com/products" , "_system");
+  }
+
 
 })
 
 
-.controller('DashCtrl', function($scope,$http,$state) {
+.controller('homeCtrl', function($scope,$http,$state) {
+			    console.log(screen.orientation.type);
+			$scope.changeOriantationPortrait = function() {
+           screen.lockOrientation('portrait-primary');
+       }
+$scope.changeOriantationPortrait();
+  $scope.game1=function(){$state.go('game1'); }
+  $scope.game2=function(){$state.go('game2'); }
+  $scope.game3=function(){$state.go('game3'); }
+  $scope.game4=function(){$state.go('game4'); }
+})
+.controller('headsUpCtrl', function($scope,$http,$state) {
+		    console.log(screen.orientation.type);
+	    $scope.changeOriantationPortrait = function() {
+           screen.lockOrientation('landscape-primary');
+       }
+	 
+	 
+$scope.changeOriantationPortrait();
 	$scope.Score=-1;
+	$scope.headsUpData=["British", "Texan", "Chinese", "Indian", "Spanish", "German", "Russian", "Irish", "Dutch", "Egyptian", "Mission Impossible", "Transformers", "Avengers", "Dark Knight", "The Conjuring", "Texas Chainsaw Massacre", "Hannibal", "Devil Wears Prada", "Sex in the City", "Rush Hour", "Grey Goose Vodka", "Bacardi Rum", "Old Monk", "Bira", "Jagermeister", "Sake", "Dom Perignon", "Gin", "Sula", "Tequila", "Jakie Chan", "Chris Rock", "Arnold Schwarzenegger", "Emilia Clarke", "Ann Hathaway", "Gigi Hadid", "Samuel L Jackson", "Bruce Willis", "Jennifer Lawrence", "Mila Kunis", "Train", "Monkey", "Laugh out Loud", "Book Worm", "Ambulance", "Lord of the Rings", "EMINEM", "Bangkok", "Chicken pox", "Head over Heels"]
+	$scope.headsUp=function(){ $scope.Score+=1; $scope.headsUpHint = $scope.headsUpData[Math.floor(Math.random() * 50)]; 		 }
+	$scope.headsUp();
+})
+.controller('DashCtrl', function($scope,$http,$state) {
+	    console.log(screen.orientation.type);
+	    $scope.changeOriantationPortrait = function() {
+           screen.lockOrientation('portrait-primary');
+       }
+     // $window.open('http://drunkendinesh.com/', '_self');
+	 
+	 
+$scope.changeOriantationPortrait();
+	$scope.Score=-1;
+$scope.reset = function(form) {
+      $scope.color.name = "";
+      $scope.form.$setPristine();
+    }
 	  $scope.questions=function(){
 
 	  var tList=this;
@@ -19,28 +56,48 @@ angular.module('starter.controllers', [])
          $http.get('data/transactiondata.json').success(function(data){
          tList.products=data;
 		 //console.log(tList.products[Math.floor(Math.random() * 10) + 1 ]);
-		 console.log(Math.floor(Math.random() * 10));
-		 $scope.lists=tList.products[Math.floor(Math.random() * 10) ];
+		 console.log(Math.floor(Math.random() * 23));
+		 $scope.lists=tList.products[Math.floor(Math.random() * 23) ];
 		 console.log($scope.lists);
 		 $scope.Score+=1;
 		 if($scope.Score>=10){$state.go('home');}
-         });
-	  console.log($scope.choice1);
-	  console.log($scope.radioTest);
+         })
+	  console.log($scope.choice);
 	  }
 	  $scope.questions();
+	  	$scope.uncheck = function (event,color) {
+	console.log(color.$pristine);
+	color.$pristine = true;
+    if ($scope.checked == event.target.value)
+        $scope.checked = false
+}
 })
 
   .controller('loaderCtrl',function($scope,$window){
-    window.screen.lockOrientation('portrait');
-    screenOrientation.Orientations('landscape');
-    console.log(screen.orientation)
-      $window.open('http://drunkendinesh.com/');
-
+    //window.screen.lockOrientation('portrait');
+    //screenOrientation.Orientations('landscape');
+	//screen.lockOrientation('portrait');
+    //screen.orientation.type=portrait;
+    console.log(screen.orientation.type);
+	    $scope.changeOriantationPortrait = function() {
+           screen.lockOrientation('landscape-primary');
+       }
+     // $window.open('http://drunkendinesh.com/', '_self');
+	 
+	 
+$scope.changeOriantationPortrait();
   })
 
 
 .controller('game2Ctrl', function($scope,$state) {
+	    console.log(screen.orientation.type);
+	    $scope.changeOriantationPortrait = function() {
+           screen.lockOrientation('portrait-primary');
+       }
+     // $window.open('http://drunkendinesh.com/', '_self');
+	 
+	 
+$scope.changeOriantationPortrait();
 		$scope.Score=-1;
 
  $scope.game2Data= ["Never Have I Ever licked a window",
@@ -247,3 +304,4 @@ angular.module('starter.controllers', [])
 $scope.game2Question2=function(){ $scope.Score+=1; $scope.game2Question = $scope.game2Data[Math.floor(Math.random() * 101)]; 		 }
 $scope.game2Question2();
 })
+

@@ -1,4 +1,13 @@
-<ion-view ng-controller="loaderCtrl">
-  <ion-content>
+<ion-view class="bar-positive">
+  <ion-content >
+  <div class="padding">
+  <p class="item"><span>Heads Up</span></p><br/>
+  <div class="col" >
+	<h1 class="text-center">{{headsUpHint}}</h1><br/>
+  </div>
+ </div>
   </ion-content>
+<div class="bar bar-footer bar-clear game_footerButton">
+<button ng-click="headsUp()" class="button button-full game_nextButton">Next</button>
+</div>
 </ion-view>

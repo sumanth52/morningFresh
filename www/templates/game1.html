@@ -1,17 +1,26 @@
 <ion-view class="bar-positive">
   <ion-content >
   <div class="padding">
-  <p class="col"><h3>Never Have I Ever</h3></p><br/>
+  <p class="col"><h3>Trivia</h3></p><br/>
   <div class="col" >
 
-	<p class="">Question Date{{lists.txnDate}} </p>
-	<ion-radio ng-model="choice" ng-value="'A'">{{lists.amount}}</ion-radio>
-	<ion-radio ng-model="choice" ng-value="'B'">{{ lists.orderId}}</ion-radio>
+	<p class="">{{lists.question}} </p>
+	 <form name="form" id="form">
+	  <label class="item">
+		<input type="radio" ng-model="color.name" value="one">
+		{{lists.option1}}
+	  </label><br/>
+	  <label class="item">
+		<input type="radio" ng-model="color.name" value="two">
+		{{ lists.option2}}
+	  </label><br/>
+	 </form>
   </div>
   
  </div>
+
   </ion-content>
   <div class="bar bar-footer bar-clear game_footerButton">
-<button ng-click="questions()" class="button button-full game_nextButton">refresh</button>
+<button ng-click="questions()" class="button button-full game_nextButton">Next</button>
 </div>
 </ion-view>

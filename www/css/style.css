@@ -1,6 +1,6 @@
 /* Empty. Add your own CSS if you like */
 
-.game_button {
+.button.game_button {
     background: #e65e64;
 	margin: 0;
 	border-top: 1px solid white;
@@ -15,3 +15,7 @@
 	background: #e65e64;
 	margin: 0;
 }
+.rotateScreen{
+    width: 100vw;
+    height: 100vh;
+} 
